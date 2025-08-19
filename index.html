@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios Policiales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+        }
+        .logo-container {
+            width: 40vw;
+            height: 40vw;
+            max-width: 160px;
+            max-height: 160px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        .logo-container img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+        .boton {
+            display: inline-block;
+            width: 90%;
+            max-width: 300px;
+            margin: 10px auto;
+            padding: 15px 20px;
+            font-size: 18px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .boton:hover {
+            background-color: #3367d6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .boton:active {
+            transform: translateY(0);
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .boton {
+                font-size: 16px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="logot.png" alt="Logo">
+    </div>
+
+    <h1>Acceso a Formularios</h1>
+
+    <a class="boton" href="https://forms.gle/cJHzuTHkSR47Kysd8" target="_blank">Procedimientos</a>
+    <a class="boton" href="https://forms.gle/B4DgdhSovzFzaMEq6" target="_blank">Secuestros</a>
+    <a class="boton" href="https://forms.gle/Z69kWcNkdBTR6ngp6" target="_blank">Elementos Recuperados</a>
+    <a class="boton" href="COMPLETAR" target="_blank">Identificaciones</a>
+    <a class="boton" href="COMPLETAR" target="_blank">Contravenciones</a>
+
+</body>
+</html>
