@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Formularios Policiales</title>
+    <title>Acceso a Formularios Policiales</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
@@ -56,6 +56,7 @@
             text-decoration: none;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
         .boton:hover {
             background-color: #3367d6;
@@ -74,21 +75,38 @@
                 padding: 12px 15px;
             }
         }
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: white;
+        }
     </style>
+    <script>
+        function confirmAction(buttonName, url) {
+            const confirmation = confirm(`¿Seguro que quieres ingresar a ${buttonName}?`);
+            if (confirmation) {
+                window.open(url, '_blank');
+            }
+        }
+    </script>
 </head>
 <body>
 
     <div class="logo-container">
-        <img src="logot.png" alt="Logo">
+        <img src="logot.png" alt="Logo de la Unidad Regional de Orden Público">
     </div>
 
     <h1>Acceso a Formularios</h1>
 
-    <a class="boton" href="https://forms.gle/cJHzuTHkSR47Kysd8" target="_blank">Procedimientos</a>
-    <a class="boton" href="https://forms.gle/B4DgdhSovzFzaMEq6" target="_blank">Secuestros</a>
-    <a class="boton" href="https://forms.gle/Z69kWcNkdBTR6ngp6" target="_blank">Elementos Recuperados</a>
-    <a class="boton" href="COMPLETAR" target="_blank">Contravenciones</a>
+    <button class="boton" onclick="confirmAction('Procedimientos', 'https://forms.gle/cJHzuTHkSR47Kysd8')">Procedimientos</button>
+    <button class="boton" onclick="confirmAction('Secuestros', 'https://forms.gle/B4DgdhSovzFzaMEq6')">Secuestros</button>
+    <button class="boton" onclick="confirmAction('Elementos Recuperados', 'https://forms.gle/Z69kWcNkdBTR6ngp6')">Elementos Recuperados</button>
+    <button class="boton" onclick="confirmAction('Contravenciones', 'COMPLETAR')">Contravenciones</button>
+
+    <footer>
+        <p>UNIDAD REGIONAL DE ORDEN PÚBLICO Nº4</p>
+        <p>&copy; 2023 Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
-
