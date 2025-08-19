@@ -14,7 +14,21 @@
             text-align: center;
             padding: 20px;
             margin: 0;
-            overflow: hidden;
+            overflow-y: auto; /* Permitir desplazamiento vertical */
+            height: 100vh; /* Asegurarse de que el body ocupe toda la altura de la ventana */
+            scrollbar-width: thin; /* Para navegadores Firefox */
+            scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Color de la barra y el fondo */
+        }
+        /* Estilos para navegadores WebKit (Chrome, Safari) */
+        body::-webkit-scrollbar {
+            width: 8px; /* Ancho de la barra de desplazamiento */
+        }
+        body::-webkit-scrollbar-track {
+            background: transparent; /* Fondo de la barra de desplazamiento */
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.5); /* Color de la barra de desplazamiento */
+            border-radius: 10px; /* Bordes redondeados */
         }
         h1 {
             margin-bottom: 20px;
