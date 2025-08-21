@@ -150,6 +150,26 @@
             padding: 15px;
             border-radius: 10px;
         }
+        /* Estilos para el círculo de carga */
+        .loading {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            display: none; /* Oculto por defecto */
+        }
+        .loader {
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-top: 8px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
     <script>
         function showModal(buttonName, url) {
@@ -171,6 +191,25 @@
             modal.style.display = "none";
         }
 
+        function showLoading() {
+            const button = document.getElementById("denunciaButton");
+            const loading = document.getElementById("loading");
+
+            // Cambiar el texto y el ícono del botón
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Cargando...';
+            button.disabled = true; // Deshabilitar el botón
+
+            // Mostrar el círculo de carga
+            loading.style.display = "block";
+
+            // Simular un retraso (puedes cambiar el tiempo según sea necesario)
+            setTimeout(() => {
+                loading.style.display = "none"; // Ocultar el círculo de carga
+                button.innerHTML = '<i class="fas fa-bullhorn"></i> Denuncias'; // Restablecer el botón
+                button.disabled = false; // Habilitar el botón
+            }, 3000); // Simula 3 segundos de carga
+        }
+
         window.onclick = function(event) {
             const modal = document.getElementById("myModal");
             if (event.target == modal) {
@@ -187,26 +226,30 @@
 
     <h1>Acceso a Formularios</h1>
 
-<button class="boton" onclick="showModal('Procedimientos', 'https://forms.gle/cJHzuTHkSR47Kysd8')">
-    <i class="fas fa-file-alt"></i> Procedimientos
-</button>
-<button class="boton" onclick="showModal('Secuestros', 'https://forms.gle/B4DgdhSovzFzaMEq6')">
-    <i class="fas fa-user-lock"></i> Secuestros
-</button>
-<button class="boton" onclick="showModal('Elementos Recuperados', 'https://forms.gle/Z69kWcNkdBTR6ngp6')">
-    <i class="fas fa-box-open"></i> Elementos Recuperados
-</button>
-<button class="boton" onclick="showModal('Contravenciones', 'https://forms.gle/HPbkm1xTDVdnsjiU7')">
-    <i class="fas fa-exclamation-triangle"></i> Contravenciones
-</button>
-<button class="boton" onclick="showModal('Hechos Delictuosos', 'COMPLETAR')">
-    <i class="fas fa-gavel"></i> Hechos Delictuosos
-</button>
-<button class="boton" onclick="showModal('Denuncias', 'COMPLETAR')">
-    <i class="fas fa-bullhorn"></i> Denuncias
-</button>
+    <button class="boton" onclick="showModal('Procedimientos', 'https://forms.gle/cJHzuTHkSR47Kysd8')">
+        <i class="fas fa-file-alt"></i> Procedimientos
+    </button>
+    <button class="boton" onclick="showModal('Secuestros', 'https://forms.gle/B4DgdhSovzFzaMEq6')">
+        <i class="fas fa-user-lock"></i> Secuestros
+    </button>
+    <button class="boton" onclick="showModal('Elementos Recuperados', 'https://forms.gle/Z69kWcNkdBTR6ngp6')">
+        <i class="fas fa-box-open"></i> Elementos Recuperados
+    </button>
+    <button class="boton" onclick="showModal('Contravenciones', 'https://forms.gle/HPbkm1xTDVdnsjiU7')">
+        <i class="fas fa-exclamation-triangle"></i> Contravenciones
+    </button>
+    <button class="boton" onclick="showModal('Hechos Delictuosos', 'COMPLETAR')">
+        <i class="fas fa-gavel"></i> Hechos Delictuosos
+    </button>
+    <button class="boton" id="denunciaButton" onclick="showLoading()">
+        <i class="fas fa-bullhorn"></i> Denuncias
+    </button>
 
-    
+    <div id="loading" class="loading">
+        <div class="loader"></div>
+        <p>Funcionalidad en creación...</p>
+    </div>
+
     <div class="info-section">
         <h2>Información Adicional</h2>
         <p>Selecciona uno de los formularios para continuar. Asegúrate de tener toda la información necesaria antes de proceder.</p>
@@ -227,6 +270,3 @@
 
 </body>
 </html>
-
-
-
